@@ -21,7 +21,7 @@ class Scraper
 
   def self.scrape_profile_page(profile_url) #responsible for scraping an individual student's profile page
 
-    profile = Nokogiri::HTML(open("https://learn-co-curriculum.github.io/student-scraper-test-page/students/ryan-johnson.html"))
+    doc = Nokogiri::HTML(open("https://learn-co-curriculum.github.io/student-scraper-test-page/students/ryan-johnson.html"))
     student_profile = []
     #
   end
