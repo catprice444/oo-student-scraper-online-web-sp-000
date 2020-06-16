@@ -5,9 +5,8 @@ class Student
   @@all = []
 
   def initialize(student_hash)
-    student_hash = {@name => name, @location => location, @twitter => twitter, @linkedin => linkedin, @github => github,
-      @blog => blog, @profile_quote => profile_quote, @bio => bio, @profile_url => profile_url}
-    @@all << student_hash
+    student_hash = {|k, v| self.send(("#{k}="), v)}
+    @@all << self
   end
 
   def self.create_from_collection(students_array)
