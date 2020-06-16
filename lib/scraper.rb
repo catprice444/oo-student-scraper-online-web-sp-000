@@ -23,7 +23,7 @@ class Scraper
 
     profile = Nokogiri::HTML(open("https://learn-co-curriculum.github.io/student-scraper-test-page/students/ryan-johnson.html"))
     student_profile = []
-    # 
+    #
   end
 
   binding.pry
