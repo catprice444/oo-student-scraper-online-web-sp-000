@@ -2,21 +2,21 @@ require 'open-uri'
 require 'pry'
 
 class Scraper
-  #
-  # def self.scrape_index_page(index_url) #scraping the index page that lists all the students
-  #
-  #   doc = Nokogiri::HTML(open("https://learn-co-curriculum.github.io/student-scraper-test-page/index.html"))
-  #   students = []
-  #
-  #     doc.css(".student-card").each do |student|
-  #       students_info = {}
-  #       students_info[:name] = student.css("h4.student-name").text
-  #       students_info[:location] = student.css("p.student-location").text
-  #       students_info[:profile_url] = student.css("a").attribute("href").value
-  #       students << students_info
-  #     end
-  #   students
-  # end
+  
+  def self.scrape_index_page(index_url) #scraping the index page that lists all the students
+  
+    doc = Nokogiri::HTML(open("https://learn-co-curriculum.github.io/student-scraper-test-page/index.html"))
+    students = []
+  
+      doc.css(".student-card").each do |student|
+        students_info = {}
+        students_info[:name] = student.css("h4.student-name").text
+        students_info[:location] = student.css("p.student-location").text
+        students_info[:profile_url] = student.css("a").attribute("href").value
+        students << students_info
+      end
+    students
+  end
 
 
   def self.scrape_profile_page(profile_url) #responsible for scraping an individual student's profile page
